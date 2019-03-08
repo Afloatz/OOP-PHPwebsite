@@ -10,7 +10,20 @@ class Ship
 
 	private $strength = 0;
 
-	public function sayHello()
+	private $underRepair;
+
+	public function __construct($name)
+    {
+        $this->name = $name;
+        $this->underRepair = mt_rand(1, 100) < 30;
+    }
+
+    public function isFunctional()
+    {
+        return !$this->underRepair;
+    }
+
+    public function sayHello()
 	{
 		echo 'HELLO!';
 	}
