@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/lib/Ship.php';
+require __DIR__ . '/lib/Ship.php';
 
 /**
  * @param Ship $someShip
