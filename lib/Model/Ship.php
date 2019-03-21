@@ -17,6 +17,7 @@ class Ship
 	public function __construct($name)
     {
         $this->name = $name;
+        // gives 30% chance for a ship to be broken
         $this->underRepair = mt_rand(1, 100) < 30;
     }
 
@@ -132,5 +133,14 @@ class Ship
         $this->id = $id;
     }
 
+    public function getType()
+    {
+        return 'Empire';
+    }
+
+    private function getSecretDoorCodeToTheDeathstar()
+    {
+        return 'Ra1nb0ws';
+    }
 
 }
