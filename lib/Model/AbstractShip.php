@@ -6,7 +6,7 @@
  * Time: 16:35
  */
 
-class AbstractShip
+abstract class AbstractShip
 {
     private $id;
 
@@ -15,6 +15,13 @@ class AbstractShip
     private $weaponPower = 0;
 
     private $strength = 0;
+
+    // Forces the subclasses to have this method (which are specific to the subclasses)
+    abstract public function getJediFactor();
+
+    abstract public function getType();
+
+    abstract public function isFunctional();
 
     public function __construct($name)
     {
