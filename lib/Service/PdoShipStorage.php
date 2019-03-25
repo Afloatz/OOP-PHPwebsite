@@ -8,7 +8,7 @@
 
 // Does the queries to the database
 
-class PdoShipStorage extends AbstractShipStorage
+class PdoShipStorage implements ShipStorageInterface
 {
     private $pdo;
 
