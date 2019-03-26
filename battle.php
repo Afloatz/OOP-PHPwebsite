@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
+// It's the file that handles the submit
+
 $container = new Container($configuration);
 $shipLoader = $container->getShipLoader();
 $ships = $shipLoader->getShips();
@@ -28,9 +30,9 @@ if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
     die;
 }
 
-
 $battleManager = $container->getBattleManager();
-$battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+$battleType = $_POST['battle_type'];
+$battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity, $battleType);
 ?>
 
 <html>
