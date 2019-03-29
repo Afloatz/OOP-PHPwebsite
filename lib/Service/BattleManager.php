@@ -6,7 +6,7 @@
  * Time: 09:30
  */
 
-namespace Battle;
+namespace Service;
 
 class BattleManager
 {
