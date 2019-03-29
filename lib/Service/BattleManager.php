@@ -6,6 +6,8 @@
  * Time: 09:30
  */
 
+namespace Battle;
+
 class BattleManager
 {
     // normal battle mode
