@@ -5,6 +5,13 @@
  * Date: 09/03/2019
  * It's a service class: does work
  */
+
+namespace Service;
+
+use Model\RebelShip;
+use Model\Ship;
+use Model\AbstractShip;
+
 // Job of this class is to create objects wherever the data comes from (database or json file)
 
 class ShipLoader

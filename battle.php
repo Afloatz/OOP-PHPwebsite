@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
+use Service\Container;
+
 // It's the file that handles the submit
 
 $container = new Container($configuration);

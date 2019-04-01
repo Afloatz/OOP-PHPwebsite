@@ -1,5 +1,7 @@
 <?php
 
+namespace Service;
+
 // Create the service objects
 
 class Container
@@ -56,8 +58,9 @@ class Container
     public function getShipStorage()
     {
         if ($this->shipStorage === null) {
-            //$this->shipStorage = new PdoShipStorage($this->getPDO());
-            $this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
+            // Can load ships either from the database or from a Json file, just uncomment one method
+            $this->shipStorage = new PdoShipStorage($this->getPDO());
+            //$this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
         }
 
         return $this->shipStorage;

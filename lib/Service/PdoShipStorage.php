@@ -6,6 +6,8 @@
  * Time: 18:46
  */
 
+namespace Service;
+
 // Does the queries to the database
 
 class PdoShipStorage implements ShipStorageInterface

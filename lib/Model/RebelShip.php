@@ -6,6 +6,8 @@
  * Time: 17:58
  */
 
+namespace Model;
+
 class RebelShip extends AbstractShip
 {
     public function getFavoriteJedi()

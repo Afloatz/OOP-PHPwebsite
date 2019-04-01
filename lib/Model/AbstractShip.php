@@ -6,6 +6,8 @@
  * Time: 16:35
  */
 
+namespace Model;
+
 abstract class AbstractShip
 {
     private $id;
