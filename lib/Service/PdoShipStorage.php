@@ -14,7 +14,7 @@ class PdoShipStorage implements ShipStorageInterface
 {
     private $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
         $this->pdo = $pdo;
     }
@@ -24,7 +24,7 @@ class PdoShipStorage implements ShipStorageInterface
         $pdo = $this->pdo;
         $statement = $pdo->prepare('SELECT * FROM ship');
         $statement->execute();
-        $shipsArray = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $shipsArray = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
         return $shipsArray;
     }
@@ -34,7 +34,7 @@ class PdoShipStorage implements ShipStorageInterface
         $pdo = $this->pdo;
         $statement = $pdo->prepare('SELECT * FROM ship WHERE id = :id');
         $statement->execute(array('id' => $id));
-        $shipArray = $statement->fetch(PDO::FETCH_ASSOC);
+        $shipArray = $statement->fetch(\PDO::FETCH_ASSOC);
 
         if (!$shipArray) {
             return null;

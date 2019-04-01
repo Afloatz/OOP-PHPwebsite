@@ -22,19 +22,19 @@ class Container
     }
 
     /**
-     * @return PDO
+     * @return \PDO
      */
     public function getPDO()
     {
         // to avoid making multiple connection to the database. We just save it in a property
         if ($this->pdo === null) {
-            $this->pdo = new PDO(
+            $this->pdo = new \PDO(
                 $this->configuration['db_dsn'],
                 $this->configuration['db_user'],
                 $this->configuration['db_pass']
             );
             // throw exceptions if something goes wrong
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 
         return $this->pdo;
@@ -69,7 +69,7 @@ class Container
     public function getBattleManager()
     {
         if ($this->battleManager === null) {
-            $this->battleManager = new Battle\BattleManager();
+            $this->battleManager = new BattleManager();
         }
 
         return $this->battleManager;
