@@ -3,5 +3,8 @@
     "psr-4": {
       "": "lib"
     }
+  },
+  "require-dev": {
+    "symfony/web-server-bundle": "^4.2"
   }
 }

@@ -120,4 +120,10 @@ abstract class AbstractShip
     {
         $this->id = $id;
     }
+
+    // the method __toString() gives the ability to PHP to convert the object into a string
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

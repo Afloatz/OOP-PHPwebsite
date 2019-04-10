@@ -11,6 +11,7 @@ namespace Service;
 use Model\RebelShip;
 use Model\Ship;
 use Model\AbstractShip;
+use Model\ShipCollection;
 
 // Job of this class is to create objects wherever the data comes from (database or json file)
 
@@ -24,14 +25,14 @@ class ShipLoader
     }
 
     /**
-     * @return AbstractShip[]
+     * @return ShipCollection
      */
     public function getShips()
     {
         try {
             $shipsData = $this->shipStorage->fetchAllShipsData();
-        } catch (\Exception $e) {
-            trigger_error('Exception! '.$e->getMessage());
+        } catch (\PDOException $e) {
+            trigger_error('Database Exception! '.$e->getMessage());
             $shipsData = [];
         }
 
@@ -40,7 +41,7 @@ class ShipLoader
             $ships[] = $this->createShipFromData($shipData);
         }
 
-        return $ships;
+        return new ShipCollection($ships);
     }
 
     /**

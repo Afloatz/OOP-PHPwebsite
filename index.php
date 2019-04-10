@@ -12,6 +12,8 @@ $ships = $shipLoader->getShips();
 $brokenShip = new BrokenShip('I am so broken');
 $ships[] = $brokenShip;
 
+$ships->removeAllBrokenShips();
+
 // We call a static method
 $battleTypes = BattleManager::getAllBattleTypesWithDescription();
 
