@@ -11,7 +11,7 @@ namespace Model;
 // the ShipCollection object can act like an array thanks to the interfaces \ArrayAccess and \IteratorAggregate
 use Traversable;
 
-class ShipCollection implements \ArrayAccess, \IteratorAggregate, \Countable
+class ShipCollection implements \ArrayAccess, \IteratorAggregate
 {
     /**
      * @var array AbstractShip[]
