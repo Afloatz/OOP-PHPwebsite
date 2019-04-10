@@ -61,6 +61,8 @@ class Container
             // Can load ships either from the database or from a Json file, just uncomment one method
             $this->shipStorage = new PdoShipStorage($this->getPDO());
             //$this->shipStorage = new JsonFileShipStorage(__DIR__.'/../../resources/ships.json');
+
+            $this->shipStorage = new LoggableShipStorage($this->shipStorage);
         }
 
         return $this->shipStorage;
